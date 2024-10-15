@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.calendar-header {
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.line-header {
+    display: block;
+    height: 2px;
+    background-color: rgb(219, 217, 217);
+    margin-top: 4px;
+}
+
+.month-navigation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.month-year {
+    font-size: 14px;
+    text-align: left;
+    font-weight: bold;
+    flex: 1;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    text-align: center;
+}
+
+.days div {
+    padding: 10px;
+    border-radius: 50%; /* Borda circular */
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.days div:hover {
+    background-color: #e0e0e0;
+}
+
+.selected-start {
+    border: 2px solid black; /* Borda circular oca para data inicial */
+    color: black; /* Texto preto */
+}
+
+.selected-end {
+    background-color: #6200ea; /* Cor de fundo do fim */
+    color: white; /* Texto branco */
+}
+
+.selected-range {
+    background-color: rgba(98, 0, 234, 0.5); /* Cor para o intervalo */
+}
+
+.calendar-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,562 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(182deg, #4200FF 28.63%, #004099 98.24%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 500px; /* Limita a largura máxima */
+  margin: auto; /* Margem para dar espaçamento em relação à borda da tela */
+  margin-top: 5px;
+
+}
+
+.compras-module {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: block;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  margin-top: 4px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: Kodchasan;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.periodo {
+  margin-bottom: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-left: 9px;
+}
+
+.date-row {
+  display: flex;
+  margin-left: 9px;
+  gap: 20px;
+}
+
+.date-input-container {
+  display: flex;
+  width: 122px;
+  height: 27px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.date-input {
+  width: 100%;
+  padding: 5px;
+  padding-right: 35px; /* Espaço para o ícone */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.calendar-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Estilos modificados */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  margin-left: 10px; /* Adiciona margem à esquerda */
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Tamanho específico para as caixas de Fornecedor e Produto */
+.input-group.fornecedor .search-input,
+.input-group.produto .search-input {
+  width: 359px;
+  height: 37px;
+}
+
+.input-group.grupo .search-input,
+.input-group.subgrupo .search-input {
+  width: 159px;
+  height: 37px;
+}
+
+/* Ícone de pesquisa dentro da caixa */
+.search-icon {
+  position: relative;
+  right: 25px;
+  top: 100%;
+  transform: translateY(10%);
+}
+
+.input-row {
+  position: relative;
+  width: 100%;
+}
+
+.input-row .input-group {
+  width: 48%;
+}
+
+/* Estilos do botão */
+.button {
+  margin-top: 12px; /* Espaçamento acima do botão */
+  padding: 5px 10px; /* Ajustando o padding para um tamanho menor */
+  border-radius: 100px; /* Bordas arredondadas */
+  background: #FFEF0D; /* Cor de fundo do botão */
+  height: 30px; /* Ajustando a altura do botão */
+  width: 100px; /* Definindo uma largura específica para o botão */
+  display: flex; /* Usando flexbox para centralizar o conteúdo */
+  align-items: center; /* Centralizando verticalmente */
+  justify-content: center; /* Centralizando horizontalmente */
+  font-size: 14px; /* Diminuindo o tamanho da fonte */
+  color: #000; /* Cor do texto */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  margin-left: auto; /* Margem automática para centralizar */
+  margin-right: auto; /* Margem automática para centralizar */
+}
+
+.button img {
+  margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+  width: 16px; /* Ajustando a largura do ícone */
+  height: 16px; /* Ajustando a altura do ícone */
+}
+
+.result-table {
+  border-collapse: collapse;
+  margin-top: 20px; /* Espaçamento acima da tabela */
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #000; /* Linha preta ao redor das células */
+  padding: 10px; /* Espaçamento interno */
+  text-align: left; /* Alinhamento à esquerda do texto */
+}
+
+.result-table th {
+  background-color: #f2f2f2; /* Fundo cinza claro para o cabeçalho */
+}
+
+.result-table td {
+  background-color: #ffffff; /* Fundo branco para as células */
+}
+
+/* Estilo da tabela */
+.result-table {
+  border-radius: 7px;
+  border: 2px solid #000;
+  height: auto; /* Permite que a altura se ajuste ao conteúdo */
+  margin: 0 5px;
+  border-collapse: collapse; /* Para as bordas colapsarem corretamente */
+  overflow: hidden; /* Para arredondar as bordas corretamente */
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #000; /* Borda das células */
+  padding: 10px; /* Espaçamento interno das células */
+  text-align: center; /* Centralizar texto */
+  color: #000;
+}
+
+.footer {
+  display: flex;
+  position: relative; /* Define o contexto de posicionamento */
+  padding: 12px 12px 0px 12px; /* Espaçamento interno do rodapé */
+  background: linear-gradient(#004099 4%, #280099 96%);
+  flex-direction: column;
+}
+
+.footer-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 100px;
+  background: #FFEF0D;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  border: none; /* Remove bordas padrão */
+  cursor: pointer; /* Cursor em forma de mão ao passar sobre */
+}
+
+.btn-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-image {
+  width: 80px; /* Largura da imagem */
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+.line-footer {
+  display: block;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  margin-top: 2px;
+}
+
+/* Estilos do calendário */
+.date-inputs {
+  margin-bottom: 10px; /* Ajusta a margem para o espaço entre as caixas e o calendário */
+}
+
+.date-inputs input {
+  width: 150px;
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid #65558F;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: none; /* Inicialmente escondido */
+}
+
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #3b295e;
+}
+
+.month-year-container {
+  display: flex;
+  align-items: center;
+  color: #49454F;
+}
+
+#month-year {
+  font-size: 18px;
+}
+
+.year-dropdown {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #49454F;
+}
+
+.navigation-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.navigation-arrows button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #49454F;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 20px;
+  grid-auto-rows: 40px; /* Define a altura das linhas */
+}
+
+.calendar-grid .day-name {
+  font-weight: bold;
+  color: #1D1B20;
+}
+
+.calendar-grid div {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  color: #1D1B20;
+  border: none;
+  transition: background-color 0.3s, color 0.3s; /* Suaviza a transição de cor */
+}
+
+.calendar-grid div:hover {
+  background-color: #cce7ff; /* Altera a cor de fundo ao passar o mouse */
+  color: #1D1B20; /* Altera a cor do texto ao passar o mouse */
+}
+
+.calendar-grid .selected {
+  background-color: #ffffff; /* Cor de fundo quando selecionado */
+  color: rgb(0, 0, 0); /* Cor do texto quando selecionado */
+}
+
+.date-inputs {
+  margin-bottom: 10px; /* Ajusta a margem para o espaço entre as caixas e o calendário */
+}
+
+.date-inputs input {
+  width: 150px;
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid #65558F;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: none; /* Inicialmente escondido */
+}
+
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #3b295e;
+}
+
+.month-year-container {
+  display: flex;
+  align-items: center;
+  color: #49454F;
+}
+
+#month-year {
+  font-size: 18px;
+}
+
+.year-dropdown {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #49454F;
+}
+
+.navigation-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.navigation-arrows button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #49454F;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 20px;
+}
+
+.calendar-grid .day-name {
+  font-weight: bold;
+  color: #1D1B20;
+}
+
+.calendar-grid div {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  color: #1D1B20;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-grid div:hover {
+  background-color: #dedede;
+}
+
+/* Estilo para a data inicial (círculo com borda roxa) */
+.calendar-grid .start-date {
+  border: 2px solid #65558F;
+  color: black;
+}
+
+/* Estilo para a data final (círculo preenchido com roxo) */
+.calendar-grid .end-date {
+  background-color: #65558F;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; /* Adiciona espaçamento acima dos botões */
+}
+
+.buttons-right {
+  display: flex;
+  align-items: center;
+}
+
+.buttons-right button {
+  background: none;
+  border: none;
+  color: #65558F;
+  cursor: pointer;
+  font-size: 16px;
+
+  transition: color 0.3s;
+}
+
+.buttons-right button:hover {
+  color: #65558F;
+}
+
+#delete {
+  background: none;
+  border: none;
+  color: #65558F;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+#delete:hover {
+  color: #65558F;
+}
+
+#cancel {
+  margin-right: 20px; /* Adiciona margem à direita do botão "Cancelar" */
+}
+
+.year-selector {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  width: 80px;
+  max-height: 200px; /* Limita a altura do seletor */
+  overflow-y: auto;  /* Permite rolagem vertical */
+}
+
+.year-option {
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  color: #49454F;
+}
+
+.year-option:hover {
+  background-color: #dedede;
+}
+
+.calendar-container {
+  display: none; /* Mantenha o calendário oculto inicialmente */
+  position: absolute; /* Permite que o calendário flutue acima dos outros elementos */
+  z-index: 1000; /* Um valor alto para garantir que fique acima de outros elementos */
+  background-color: white; /* Cor de fundo para o calendário */
+  border: 1px solid #ccc; /* Adiciona uma borda ao calendário */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  padding: 20px; /* Espaçamento interno */
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 colunas para os dias da semana */
+}
+
+.day-name {
+  font-weight: bold;
+}
+
+.start-date {
+  background-color: lightblue; /* Cor para a data inicial */
+}
+
+.end-date {
+  background-color: lightgreen; /* Cor para a data final */
+}
+
+.selected {
+  background-color: lightyellow; /* Cor para as datas selecionadas */
+}
+
+#error-message {
+  color: red; /* Cor da mensagem de erro */
+  display: none; /* Mantém a mensagem de erro oculta inicialmente */
+}

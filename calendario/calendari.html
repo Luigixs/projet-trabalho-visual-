@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Responsivo</title>
+    <link rel="stylesheet" href="calendari.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <span id="selectedDate">Selecione o Período</span>
+        </div>
+        <span class="line-header"></span>
+        <div class="month-navigation">
+            <div id="monthYear" class="month-year">Agosto 2023</div>
+            <div class="nav-buttons">
+                <button id="prevMonth">&lt;</button>
+                <button id="nextMonth">&gt;</button>
+            </div>
+        </div>
+        <div class="days-of-week">
+            <div>S</div>
+            <div>T</div>
+            <div>Q</div>
+            <div>Q</div>
+            <div>S</div>
+            <div>S</div>
+            <div>D</div>
+        </div>
+        <div id="calendarDays" class="days"></div>
+        <div class="calendar-footer">
+            <button id="clear">Limpar</button>
+            <button id="ok">OK</button>
+        </div>
+    </div>
+    <script src="calendari.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras Module</title>
+    <link rel="stylesheet" href="comp.css">
+</head>
+<body>
+
+    <head>
+        <h1>Compras</h1>
+        <span class="line"></span>
+    </head>
+    <div class="container">
+        <div class="compras-module">
+
+            <div class="date-inputs">
+                <input type="text" id="start-date" readonly placeholder="Data Início">
+                <input type="text" id="end-date" readonly placeholder="Data Fim">
+            </div>
+            
+            <div class="calendar-container" style="display: none;">
+                <div class="month-nav">
+                    <div class="month-year-container">
+                        <span id="month-year">Agosto 2023</span>
+                        <span class="year-dropdown" id="year-dropdown">&#x25BC;</span>
+                    </div>
+                    <div class="navigation-arrows">
+                        <button id="prev-month">&lt;</button>
+                        <button id="next-month">&gt;</button>
+                    </div>
+                </div>
+                <div class="year-selector" id="year-selector">
+                    <!-- Anos serão adicionados dinamicamente via JavaScript -->
+                </div>
+                <div class="calendar-grid">
+                    <div class="day-name">Seg</div>
+                    <div class="day-name">Ter</div>
+                    <div class="day-name">Qua</div>
+                    <div class="day-name">Qui</div>
+                    <div class="day-name">Sex</div>
+                    <div class="day-name">Sáb</div>
+                    <div class="day-name">Dom</div>
+                    <!-- Os dias do mês serão adicionados aqui via JavaScript -->
+                </div>
+                <div class="buttons">
+                    <button id="delete">Excluir</button>
+                    <div class="buttons-right">
+                        <button id="cancel">Cancelar</button>
+                        <button id="ok">OK</button>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- Fornecedor -->
+            <div class="input-group fornecedor">
+                <label>Fornecedor:</label>
+                <div class="input-row">
+                    <input type="text" class="search-input" placeholder="Fornecedor">
+                    <span class="search-icon">
+                        <img src="asstes/icon (lupa).svg" />
+                    </span>
+                </div>
+            </div>
+
+            <!-- Produto -->
+            <div class="input-group produto">
+                <label>Produto:</label>
+                <div class="input-row">
+                    <input type="text" class="search-input" placeholder="Produto">
+                    <span class="search-icon">
+                        <img src="asstes/icon (lupa).svg" />
+                    </span>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group grupo">
+                    <label>Grupo:</label>
+                    <div class="input-row">
+                        <input type="text" class="search-input" placeholder="Grupo">
+                        <span class="search-icon">
+                            <img src="asstes/icon (lupa).svg" />
+                        </span>
+                    </div>
+                </div>
+
+                <div class="input-group subgrupo">
+                    <label>Sub Grupo:</label>
+                    <div class="input-row">
+                        <input type="text" class="search-input" placeholder="Sub Grupo">
+                        <span class="search-icon">
+                            <img src="asstes/icon (lupa).svg" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Buscar -->
+            <button class="button" onclick="addRow()">
+                <img src="asstes/icon (busca).svg" alt="Buscar"> Buscar
+            </button>
+
+            <!-- Tabela para exibir resultados -->
+            <table id="resultTable" class="result-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Período</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Células vazias -->
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+            <div id="error-message" style="color: red; display: none;">Erro: Nenhum resultado encontrado!</div>
+        </div>
+    </div>
+
+    <!-- Rodapé com botões -->
+    <span class="line-footer"></span>
+    <div class="footer">
+        <div class="btn-footer">
+            <button class="footer-button" id="voltar">
+                <img src="asstes/icon (voltar).svg" alt="Voltar"> Voltar
+            </button>
+            <button class="footer-button" id="limpar">
+                <img src="asstes/icon (Limpar).svg" alt="Limpar"> Limpar
+            </button>
+        </div>
+           
+        <img src="asstes/Logo Morpheus.svg" alt="Imagem" class="footer-image">
+        
+    </div>
+    <script src="comp.js"></script>
+
+</body>
+</html>
